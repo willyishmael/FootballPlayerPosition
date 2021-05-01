@@ -5,6 +5,7 @@
  */
 package footballplayerposition;
 
+import footballplayerposition.MainLayout;
 /**
  *
  * @author User
@@ -88,8 +89,9 @@ public class ResultLayout extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ResultLayout().setVisible(true);
+                new ResultLayout().showResult();
             }
-        });  
+        });
     }
     
     public void showResult() {
@@ -98,9 +100,9 @@ public class ResultLayout extends javax.swing.JFrame {
     defenceScoreLabel.setText(Double.toString(defenceScore));
 }
 
-    public double strikerScore;
-    public double centerScore;
-    public double defenceScore;
+    public double strikerScore = 81;
+    public double centerScore = 11;
+    public double defenceScore = 77;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgLabel;

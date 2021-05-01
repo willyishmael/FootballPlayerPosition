@@ -230,6 +230,9 @@ public class MainLayout extends javax.swing.JFrame {
         System.out.println(model.strikerScore);
         System.out.println(model.centerScore);
         System.out.println(model.defenceScore);
+        
+        resultLayout.setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
