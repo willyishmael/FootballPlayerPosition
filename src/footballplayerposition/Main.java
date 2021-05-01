@@ -45,7 +45,7 @@ public class Main extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new MainView().setVisible(true);
+        new MainLayout().setVisible(true);
     }
     
 }
