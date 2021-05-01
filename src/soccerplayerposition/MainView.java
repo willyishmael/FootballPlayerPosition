@@ -27,21 +27,155 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        tfPhy = new javax.swing.JTextField();
+        tfDef = new javax.swing.JTextField();
+        tfDrib = new javax.swing.JTextField();
+        tfPass = new javax.swing.JTextField();
+        tfShoot = new javax.swing.JTextField();
+        tfAcc = new javax.swing.JTextField();
+        btnCreate = new javax.swing.JLabel();
+        tfFoot = new javax.swing.JTextField();
+        tfNumber = new javax.swing.JTextField();
+        tfNation = new javax.swing.JTextField();
+        tfName = new javax.swing.JTextField();
+        bgLabel = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(960, 720));
+        getContentPane().setLayout(null);
+
+        tfPhy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfPhyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfPhy);
+        tfPhy.setBounds(560, 600, 50, 30);
+
+        tfDef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfDefActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfDef);
+        tfDef.setBounds(560, 550, 50, 30);
+
+        tfDrib.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfDribActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfDrib);
+        tfDrib.setBounds(560, 500, 50, 30);
+
+        tfPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfPassActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfPass);
+        tfPass.setBounds(300, 600, 50, 30);
+
+        tfShoot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfShootActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfShoot);
+        tfShoot.setBounds(300, 550, 50, 30);
+
+        tfAcc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAccActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfAcc);
+        tfAcc.setBounds(300, 500, 50, 30);
+        getContentPane().add(btnCreate);
+        btnCreate.setBounds(660, 610, 190, 30);
+
+        tfFoot.setBackground(new java.awt.Color(0, 166, 82));
+        tfFoot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfFootActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfFoot);
+        tfFoot.setBounds(340, 360, 290, 20);
+
+        tfNumber.setBackground(new java.awt.Color(0, 166, 82));
+        tfNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNumberActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfNumber);
+        tfNumber.setBounds(340, 320, 290, 20);
+
+        tfNation.setBackground(new java.awt.Color(0, 166, 82));
+        tfNation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNationActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfNation);
+        tfNation.setBounds(340, 280, 290, 20);
+
+        tfName.setBackground(new java.awt.Color(0, 166, 82));
+        tfName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tfName);
+        tfName.setBounds(340, 240, 290, 20);
+
+        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerplayerposition/ui.jpg"))); // NOI18N
+        getContentPane().add(bgLabel);
+        bgLabel.setBounds(0, 0, 960, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNameActionPerformed
+
+    private void tfNationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNationActionPerformed
+
+    private void tfNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNumberActionPerformed
+
+    private void tfFootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFootActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfFootActionPerformed
+
+    private void tfAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAccActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAccActionPerformed
+
+    private void tfShootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfShootActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfShootActionPerformed
+
+    private void tfPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPassActionPerformed
+
+    private void tfDribActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDribActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfDribActionPerformed
+
+    private void tfDefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfDefActionPerformed
+
+    private void tfPhyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPhyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +213,17 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgLabel;
+    private javax.swing.JLabel btnCreate;
+    private javax.swing.JTextField tfAcc;
+    private javax.swing.JTextField tfDef;
+    private javax.swing.JTextField tfDrib;
+    private javax.swing.JTextField tfFoot;
+    private javax.swing.JTextField tfName;
+    private javax.swing.JTextField tfNation;
+    private javax.swing.JTextField tfNumber;
+    private javax.swing.JTextField tfPass;
+    private javax.swing.JTextField tfPhy;
+    private javax.swing.JTextField tfShoot;
     // End of variables declaration//GEN-END:variables
 }
