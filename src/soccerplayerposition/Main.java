@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  *
  * @author User
  */
-public class SoccerPlayerPosition extends Application {
+public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
