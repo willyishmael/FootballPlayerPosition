@@ -11,6 +11,10 @@ package footballplayerposition;
  */
 public class MainLayout extends javax.swing.JFrame {
 
+    private double strikerScore;
+    private double centerScore;
+    private double defenceScore;
+
     /**
      * Creates new form MainView
      */
@@ -222,9 +226,14 @@ public class MainLayout extends javax.swing.JFrame {
         model.listPlayerStat(stat);
         model.position();
         
-        System.out.println(model.strikerScore);
-        System.out.println(model.centerScore);
-        System.out.println(model.defenceScore);
+        MainLayout main = new MainLayout();
+        main.strikerScore = model.strikerScore;
+        main.centerScore = model.centerScore;
+        main.defenceScore = model.defenceScore;
+        
+        System.out.println(main.strikerScore);
+        System.out.println(main.centerScore);
+        System.out.println(main.defenceScore);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
