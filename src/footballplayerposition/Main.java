@@ -5,11 +5,14 @@
  */
 package footballplayerposition;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 /**
  *
  * @author User
  */
-public class Main {
+public class Main extends Application{
     
 
     /**
@@ -17,6 +20,11 @@ public class Main {
      */
     public static void main(String[] args) {
         new MainLayout().setVisible(true);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
