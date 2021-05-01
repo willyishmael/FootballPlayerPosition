@@ -27,18 +27,32 @@ public class ResultLayout extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        defenceScoreLabel = new javax.swing.JLabel();
+        centerScoreLabel = new javax.swing.JLabel();
+        strikerScoreLabel = new javax.swing.JLabel();
+        bgLabel = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(960, 750));
+        setResizable(false);
+        getContentPane().setLayout(null);
+
+        defenceScoreLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        getContentPane().add(defenceScoreLabel);
+        defenceScoreLabel.setBounds(270, 470, 120, 40);
+
+        centerScoreLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        getContentPane().add(centerScoreLabel);
+        centerScoreLabel.setBounds(270, 380, 120, 40);
+
+        strikerScoreLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        getContentPane().add(strikerScoreLabel);
+        strikerScoreLabel.setBounds(270, 290, 120, 40);
+
+        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footballplayerposition/uikedua.jpg"))); // NOI18N
+        bgLabel.setPreferredSize(new java.awt.Dimension(960, 750));
+        getContentPane().add(bgLabel);
+        bgLabel.setBounds(0, 0, 960, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -75,9 +89,23 @@ public class ResultLayout extends javax.swing.JFrame {
             public void run() {
                 new ResultLayout().setVisible(true);
             }
-        });
+        });  
     }
+    
+    public void showResult() {
+    strikerScoreLabel.setText(Double.toString(strikerScore));
+    centerScoreLabel.setText(Double.toString(centerScore));
+    defenceScoreLabel.setText(Double.toString(defenceScore));
+}
 
+    public double strikerScore;
+    public double centerScore;
+    public double defenceScore;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgLabel;
+    private javax.swing.JLabel centerScoreLabel;
+    private javax.swing.JLabel defenceScoreLabel;
+    private javax.swing.JLabel strikerScoreLabel;
     // End of variables declaration//GEN-END:variables
 }
