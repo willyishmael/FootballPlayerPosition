@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package soccerplayerposition;
+package footballplayerposition;
 
 /**
  *
@@ -14,6 +14,9 @@ public class MainView extends javax.swing.JFrame {
     /**
      * Creates new form MainView
      */
+    
+  
+    
     public MainView() {
         initComponents();
     }
@@ -27,6 +30,7 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         tfPhy = new javax.swing.JTextField();
         tfDef = new javax.swing.JTextField();
         tfDrib = new javax.swing.JTextField();
@@ -41,9 +45,20 @@ public class MainView extends javax.swing.JFrame {
         bgLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(960, 720));
         getContentPane().setLayout(null);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footballplayerposition/Create.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(650, 600, 210, 50);
+
+        tfPhy.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         tfPhy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPhyActionPerformed(evt);
@@ -52,6 +67,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(tfPhy);
         tfPhy.setBounds(560, 600, 50, 30);
 
+        tfDef.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         tfDef.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDefActionPerformed(evt);
@@ -60,6 +76,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(tfDef);
         tfDef.setBounds(560, 550, 50, 30);
 
+        tfDrib.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         tfDrib.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDribActionPerformed(evt);
@@ -68,6 +85,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(tfDrib);
         tfDrib.setBounds(560, 500, 50, 30);
 
+        tfPass.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         tfPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPassActionPerformed(evt);
@@ -76,6 +94,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(tfPass);
         tfPass.setBounds(300, 600, 50, 30);
 
+        tfShoot.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         tfShoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfShootActionPerformed(evt);
@@ -84,6 +103,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(tfShoot);
         tfShoot.setBounds(300, 550, 50, 30);
 
+        tfAcc.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         tfAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAccActionPerformed(evt);
@@ -95,42 +115,50 @@ public class MainView extends javax.swing.JFrame {
         btnCreate.setBounds(660, 610, 190, 30);
 
         tfFoot.setBackground(new java.awt.Color(0, 166, 82));
+        tfFoot.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        tfFoot.setForeground(new java.awt.Color(255, 255, 255));
         tfFoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfFootActionPerformed(evt);
             }
         });
         getContentPane().add(tfFoot);
-        tfFoot.setBounds(340, 360, 290, 20);
+        tfFoot.setBounds(340, 360, 290, 30);
 
         tfNumber.setBackground(new java.awt.Color(0, 166, 82));
+        tfNumber.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        tfNumber.setForeground(new java.awt.Color(255, 255, 255));
         tfNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNumberActionPerformed(evt);
             }
         });
         getContentPane().add(tfNumber);
-        tfNumber.setBounds(340, 320, 290, 20);
+        tfNumber.setBounds(340, 320, 290, 30);
 
         tfNation.setBackground(new java.awt.Color(0, 166, 82));
+        tfNation.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        tfNation.setForeground(new java.awt.Color(255, 255, 255));
         tfNation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNationActionPerformed(evt);
             }
         });
         getContentPane().add(tfNation);
-        tfNation.setBounds(340, 280, 290, 20);
+        tfNation.setBounds(340, 280, 290, 30);
 
         tfName.setBackground(new java.awt.Color(0, 166, 82));
+        tfName.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        tfName.setForeground(new java.awt.Color(255, 255, 255));
         tfName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfNameActionPerformed(evt);
             }
         });
         getContentPane().add(tfName);
-        tfName.setBounds(340, 240, 290, 20);
+        tfName.setBounds(340, 240, 290, 30);
 
-        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soccerplayerposition/ui.jpg"))); // NOI18N
+        bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footballplayerposition/ui.jpg"))); // NOI18N
         getContentPane().add(bgLabel);
         bgLabel.setBounds(0, 0, 960, 720);
 
@@ -177,6 +205,26 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPhyActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        double acc = Double.parseDouble(tfAcc.getText());
+        double shoot = Double.parseDouble(tfShoot.getText());
+        double pass = Double.parseDouble(tfPass.getText());
+        double drib = Double.parseDouble(tfDrib.getText());
+        double def = Double.parseDouble(tfDef.getText());
+        double phy = Double.parseDouble(tfPhy.getText());
+        
+        double[] stat = {acc, shoot, pass, drib, def, phy};
+        
+        Model model = new Model();
+        model.listPlayerStat(stat);
+        model.position();
+        
+        System.out.println(model.strikerScore);
+        System.out.println(model.centerScore);
+        System.out.println(model.defenceScore);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -215,6 +263,7 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgLabel;
     private javax.swing.JLabel btnCreate;
+    private javax.swing.JButton jButton1;
     private javax.swing.JTextField tfAcc;
     private javax.swing.JTextField tfDef;
     private javax.swing.JTextField tfDrib;

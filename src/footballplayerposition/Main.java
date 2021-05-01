@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package soccerplayerposition;
+package footballplayerposition;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -45,7 +45,7 @@ public class Main extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        new MainView().setVisible(true);
     }
     
 }
