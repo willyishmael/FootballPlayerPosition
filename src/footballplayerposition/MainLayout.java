@@ -43,6 +43,7 @@ public class MainLayout extends javax.swing.JFrame {
         tfNation = new javax.swing.JTextField();
         tfName = new javax.swing.JTextField();
         bgLabel = new javax.swing.JLabel();
+        infoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(960, 760));
@@ -164,6 +165,14 @@ public class MainLayout extends javax.swing.JFrame {
         getContentPane().add(bgLabel);
         bgLabel.setBounds(0, 0, 960, 720);
 
+        infoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(infoButton);
+        infoButton.setBounds(10, 663, 50, 50);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -216,6 +225,9 @@ public class MainLayout extends javax.swing.JFrame {
         double def = Double.parseDouble(tfDef.getText());
         double phy = Double.parseDouble(tfPhy.getText());
         
+        String name = (tfName.getText());
+        String nation = (tfNation.getText());
+        
         double[] stat = {acc, shoot, pass, drib, def, phy};
         
         Model model = new Model();
@@ -227,13 +239,24 @@ public class MainLayout extends javax.swing.JFrame {
         resultLayout.centerScore = model.centerScore;
         resultLayout.defenceScore = model.defenceScore;
         
+        resultLayout.name = name;
+        resultLayout.nation = nation;
+        
+        resultLayout.playerStat = stat;
+        
         System.out.println(model.strikerScore);
         System.out.println(model.centerScore);
         System.out.println(model.defenceScore);
         
+        this.dispose();
         resultLayout.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void infoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoButtonActionPerformed
+        InfoLayout infoLayout = new InfoLayout();
+        infoLayout.setVisible(true);
+    }//GEN-LAST:event_infoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,6 +297,7 @@ public class MainLayout extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgLabel;
     private javax.swing.JLabel btnCreate;
+    private javax.swing.JButton infoButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JTextField tfAcc;
     private javax.swing.JTextField tfDef;

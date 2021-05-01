@@ -28,6 +28,15 @@ public class ResultLayout extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        nameLabel = new javax.swing.JLabel();
+        nationLabel = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        phyLabel = new javax.swing.JLabel();
+        defLabel = new javax.swing.JLabel();
+        dribLabel = new javax.swing.JLabel();
+        passLabel = new javax.swing.JLabel();
+        shootLabel = new javax.swing.JLabel();
+        accLabel = new javax.swing.JLabel();
         defenceScoreLabel = new javax.swing.JLabel();
         centerScoreLabel = new javax.swing.JLabel();
         strikerScoreLabel = new javax.swing.JLabel();
@@ -37,6 +46,58 @@ public class ResultLayout extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(960, 750));
         setResizable(false);
         getContentPane().setLayout(null);
+
+        nameLabel.setFont(new java.awt.Font("SansSerif", 1, 39)); // NOI18N
+        nameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nameLabel.setText("Name");
+        getContentPane().add(nameLabel);
+        nameLabel.setBounds(570, 50, 270, 50);
+
+        nationLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nationLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nationLabel.setText("Nationality");
+        getContentPane().add(nationLabel);
+        nationLabel.setBounds(570, 90, 140, 40);
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(840, 40, 60, 60);
+
+        phyLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        phyLabel.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(phyLabel);
+        phyLabel.setBounds(800, 470, 60, 40);
+
+        defLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        defLabel.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(defLabel);
+        defLabel.setBounds(800, 380, 60, 40);
+
+        dribLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        dribLabel.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(dribLabel);
+        dribLabel.setBounds(800, 290, 60, 40);
+
+        passLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        passLabel.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(passLabel);
+        passLabel.setBounds(630, 470, 60, 40);
+
+        shootLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        shootLabel.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(shootLabel);
+        shootLabel.setBounds(630, 380, 60, 40);
+
+        accLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        accLabel.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(accLabel);
+        accLabel.setBounds(630, 290, 60, 40);
 
         defenceScoreLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         getContentPane().add(defenceScoreLabel);
@@ -57,6 +118,11 @@ public class ResultLayout extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        showResult();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,8 +154,6 @@ public class ResultLayout extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ResultLayout().setVisible(true);
-                new ResultLayout().showResult();
             }
         });
     }
@@ -98,16 +162,40 @@ public class ResultLayout extends javax.swing.JFrame {
     strikerScoreLabel.setText(Double.toString(strikerScore));
     centerScoreLabel.setText(Double.toString(centerScore));
     defenceScoreLabel.setText(Double.toString(defenceScore));
+    
+    accLabel.setText(Double.toString(playerStat[0]));
+    shootLabel.setText(Double.toString(playerStat[1]));
+    passLabel.setText(Double.toString(playerStat[2]));
+    dribLabel.setText(Double.toString(playerStat[3]));
+    defLabel.setText(Double.toString(playerStat[4]));
+    phyLabel.setText(Double.toString(playerStat[5]));
+    
+    nameLabel.setText(name);
+    nationLabel.setText(nation);
 }
 
-    public double strikerScore = 81;
-    public double centerScore = 11;
-    public double defenceScore = 77;
+    public double strikerScore;
+    public double centerScore;
+    public double defenceScore;
+    
+    public String name;
+    public String nation;
+    
+    public double[] playerStat;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel accLabel;
     private javax.swing.JLabel bgLabel;
     private javax.swing.JLabel centerScoreLabel;
+    private javax.swing.JLabel defLabel;
     private javax.swing.JLabel defenceScoreLabel;
+    private javax.swing.JLabel dribLabel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JLabel nationLabel;
+    private javax.swing.JLabel passLabel;
+    private javax.swing.JLabel phyLabel;
+    private javax.swing.JLabel shootLabel;
     private javax.swing.JLabel strikerScoreLabel;
     // End of variables declaration//GEN-END:variables
 }
