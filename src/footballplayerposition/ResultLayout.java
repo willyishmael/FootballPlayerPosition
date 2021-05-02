@@ -140,6 +140,7 @@ public class ResultLayout extends javax.swing.JFrame {
         mainLayout.setVisible(true);
         this.dispose();
         
+        
     }//GEN-LAST:event_backButtonActionPerformed
 
     /**
