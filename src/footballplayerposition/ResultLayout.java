@@ -33,6 +33,7 @@ public class ResultLayout extends javax.swing.JFrame {
         numberLabel = new javax.swing.JLabel();
         footLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         phyLabel = new javax.swing.JLabel();
         defLabel = new javax.swing.JLabel();
         dribLabel = new javax.swing.JLabel();
@@ -83,6 +84,17 @@ public class ResultLayout extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(780, 50, 140, 120);
+
+        backButton.setBackground(new java.awt.Color(255, 255, 255));
+        backButton.setBorderPainted(false);
+        backButton.setOpaque(false);
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(backButton);
+        backButton.setBounds(20, 663, 60, 50);
 
         phyLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         phyLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,6 +150,14 @@ public class ResultLayout extends javax.swing.JFrame {
         // TODO add your handling code here:
         showResult();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        MainLayout mainLayout = new MainLayout();
+        mainLayout.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,6 +224,7 @@ public class ResultLayout extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel accLabel;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel bgLabel;
     private javax.swing.JLabel centerScoreLabel;
     private javax.swing.JLabel defLabel;

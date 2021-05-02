@@ -31,6 +31,7 @@ public class MainLayout extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         tfPhy = new javax.swing.JTextField();
         tfDef = new javax.swing.JTextField();
         tfDrib = new javax.swing.JTextField();
@@ -53,6 +54,8 @@ public class MainLayout extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footballplayerposition/Create.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setOpaque(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -60,6 +63,18 @@ public class MainLayout extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(650, 600, 210, 50);
+
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setBorderPainted(false);
+        jButton2.setOpaque(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 660, 50, 50);
 
         tfPhy.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         tfPhy.addActionListener(new java.awt.event.ActionListener() {
@@ -255,6 +270,7 @@ public class MainLayout extends javax.swing.JFrame {
         this.dispose();
         resultLayout.setVisible(true);
         
+ 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void infoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoButtonActionPerformed
@@ -262,6 +278,15 @@ public class MainLayout extends javax.swing.JFrame {
         infoLayout.setVisible(true);
     }//GEN-LAST:event_infoButtonActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        InfoLayout infoLayout = new InfoLayout();
+        this.dispose();
+        infoLayout.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    
+
+    
     /**
      * @param args the command line arguments
      */
@@ -303,6 +328,7 @@ public class MainLayout extends javax.swing.JFrame {
     private javax.swing.JLabel btnCreate;
     private javax.swing.JButton infoButton;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JTextField tfAcc;
     private javax.swing.JTextField tfDef;
     private javax.swing.JTextField tfDrib;
