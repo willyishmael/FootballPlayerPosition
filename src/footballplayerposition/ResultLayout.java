@@ -30,6 +30,8 @@ public class ResultLayout extends javax.swing.JFrame {
 
         nameLabel = new javax.swing.JLabel();
         nationLabel = new javax.swing.JLabel();
+        numberLabel = new javax.swing.JLabel();
+        footLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         phyLabel = new javax.swing.JLabel();
         defLabel = new javax.swing.JLabel();
@@ -47,27 +49,40 @@ public class ResultLayout extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        nameLabel.setFont(new java.awt.Font("SansSerif", 1, 39)); // NOI18N
+        nameLabel.setFont(new java.awt.Font("SansSerif", 1, 45)); // NOI18N
         nameLabel.setForeground(new java.awt.Color(255, 255, 255));
         nameLabel.setText("Name");
         getContentPane().add(nameLabel);
         nameLabel.setBounds(570, 50, 270, 50);
 
-        nationLabel.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        nationLabel.setFont(new java.awt.Font("SansSerif", 0, 19)); // NOI18N
         nationLabel.setForeground(new java.awt.Color(255, 255, 255));
         nationLabel.setText("Nationality");
         getContentPane().add(nationLabel);
-        nationLabel.setBounds(570, 90, 140, 40);
+        nationLabel.setBounds(570, 90, 150, 40);
+
+        numberLabel.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        numberLabel.setForeground(new java.awt.Color(255, 255, 255));
+        numberLabel.setText("No");
+        getContentPane().add(numberLabel);
+        numberLabel.setBounds(570, 130, 50, 40);
+
+        footLabel.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        footLabel.setForeground(new java.awt.Color(255, 255, 255));
+        footLabel.setText("Foot");
+        getContentPane().add(footLabel);
+        footLabel.setBounds(630, 130, 100, 40);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("jButton1");
+        jButton1.setBorderPainted(false);
+        jButton1.setOpaque(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(840, 40, 60, 60);
+        jButton1.setBounds(780, 50, 140, 120);
 
         phyLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
         phyLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -172,6 +187,8 @@ public class ResultLayout extends javax.swing.JFrame {
     
     nameLabel.setText(name);
     nationLabel.setText(nation);
+    numberLabel.setText(number);
+    footLabel.setText(foot);
 }
 
     public double strikerScore;
@@ -180,6 +197,8 @@ public class ResultLayout extends javax.swing.JFrame {
     
     public String name;
     public String nation;
+    public String number;
+    public String foot;
     
     public double[] playerStat;
     
@@ -190,9 +209,11 @@ public class ResultLayout extends javax.swing.JFrame {
     private javax.swing.JLabel defLabel;
     private javax.swing.JLabel defenceScoreLabel;
     private javax.swing.JLabel dribLabel;
+    private javax.swing.JLabel footLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel nationLabel;
+    private javax.swing.JLabel numberLabel;
     private javax.swing.JLabel passLabel;
     private javax.swing.JLabel phyLabel;
     private javax.swing.JLabel shootLabel;

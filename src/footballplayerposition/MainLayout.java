@@ -227,6 +227,8 @@ public class MainLayout extends javax.swing.JFrame {
         
         String name = (tfName.getText());
         String nation = (tfNation.getText());
+        String number = (tfNumber.getText());
+        String foot = (tfFoot.getText());
         
         double[] stat = {acc, shoot, pass, drib, def, phy};
         
@@ -241,7 +243,9 @@ public class MainLayout extends javax.swing.JFrame {
         
         resultLayout.name = name;
         resultLayout.nation = nation;
-        
+        resultLayout.number = number;
+        resultLayout.foot = foot;
+                
         resultLayout.playerStat = stat;
         
         System.out.println(model.strikerScore);
