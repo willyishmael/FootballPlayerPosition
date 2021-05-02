@@ -27,6 +27,7 @@ public class InfoLayout extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        backButton = new javax.swing.JButton();
         bgLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -34,12 +35,31 @@ public class InfoLayout extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        backButton.setBackground(new java.awt.Color(255, 255, 255));
+        backButton.setBorderPainted(false);
+        backButton.setOpaque(false);
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(backButton);
+        backButton.setBounds(20, 660, 60, 50);
+
         bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footballplayerposition/uiketiga.jpg"))); // NOI18N
         getContentPane().add(bgLabel);
-        bgLabel.setBounds(-6, -6, 970, 760);
+        bgLabel.setBounds(0, -20, 970, 760);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        MainLayout mainLayout = new MainLayout();
+        mainLayout.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_backButtonActionPerformed
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
@@ -57,6 +77,7 @@ public class InfoLayout extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel bgLabel;
     // End of variables declaration//GEN-END:variables
 }
