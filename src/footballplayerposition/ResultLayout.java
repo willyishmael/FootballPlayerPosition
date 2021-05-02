@@ -32,7 +32,6 @@ public class ResultLayout extends javax.swing.JFrame {
         nationLabel = new javax.swing.JLabel();
         numberLabel = new javax.swing.JLabel();
         footLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         phyLabel = new javax.swing.JLabel();
         defLabel = new javax.swing.JLabel();
@@ -73,17 +72,6 @@ public class ResultLayout extends javax.swing.JFrame {
         footLabel.setText("Foot");
         getContentPane().add(footLabel);
         footLabel.setBounds(630, 130, 100, 40);
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setBorderPainted(false);
-        jButton1.setOpaque(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(780, 50, 140, 120);
 
         backButton.setBackground(new java.awt.Color(255, 255, 255));
         backButton.setBorderPainted(false);
@@ -145,11 +133,6 @@ public class ResultLayout extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        showResult();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
@@ -231,7 +214,6 @@ public class ResultLayout extends javax.swing.JFrame {
     private javax.swing.JLabel defenceScoreLabel;
     private javax.swing.JLabel dribLabel;
     private javax.swing.JLabel footLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel nationLabel;
     private javax.swing.JLabel numberLabel;

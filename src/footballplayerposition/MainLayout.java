@@ -269,6 +269,7 @@ public class MainLayout extends javax.swing.JFrame {
         
         this.dispose();
         resultLayout.setVisible(true);
+        resultLayout.showResult();
         
  
     }//GEN-LAST:event_jButton1ActionPerformed
