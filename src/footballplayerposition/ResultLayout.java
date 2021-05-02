@@ -53,7 +53,7 @@ public class ResultLayout extends javax.swing.JFrame {
         nameLabel.setForeground(new java.awt.Color(255, 255, 255));
         nameLabel.setText("Name");
         getContentPane().add(nameLabel);
-        nameLabel.setBounds(570, 50, 270, 50);
+        nameLabel.setBounds(568, 50, 270, 50);
 
         nationLabel.setFont(new java.awt.Font("SansSerif", 0, 19)); // NOI18N
         nationLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,15 +63,16 @@ public class ResultLayout extends javax.swing.JFrame {
 
         numberLabel.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(255, 255, 255));
-        numberLabel.setText("No");
+        numberLabel.setText("10");
+        numberLabel.setToolTipText("");
         getContentPane().add(numberLabel);
-        numberLabel.setBounds(570, 130, 50, 40);
+        numberLabel.setBounds(806, 80, 50, 40);
 
-        footLabel.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        footLabel.setFont(new java.awt.Font("SansSerif", 0, 19)); // NOI18N
         footLabel.setForeground(new java.awt.Color(255, 255, 255));
         footLabel.setText("Foot");
         getContentPane().add(footLabel);
-        footLabel.setBounds(630, 130, 100, 40);
+        footLabel.setBounds(570, 120, 100, 30);
 
         backButton.setBackground(new java.awt.Color(255, 255, 255));
         backButton.setBorderPainted(false);
@@ -114,17 +115,17 @@ public class ResultLayout extends javax.swing.JFrame {
         getContentPane().add(accLabel);
         accLabel.setBounds(630, 290, 60, 40);
 
-        defenceScoreLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        defenceScoreLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         getContentPane().add(defenceScoreLabel);
-        defenceScoreLabel.setBounds(270, 470, 120, 40);
+        defenceScoreLabel.setBounds(270, 466, 120, 40);
 
-        centerScoreLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        centerScoreLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         getContentPane().add(centerScoreLabel);
-        centerScoreLabel.setBounds(270, 380, 120, 40);
+        centerScoreLabel.setBounds(270, 382, 120, 40);
 
-        strikerScoreLabel.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        strikerScoreLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         getContentPane().add(strikerScoreLabel);
-        strikerScoreLabel.setBounds(270, 290, 120, 40);
+        strikerScoreLabel.setBounds(270, 295, 120, 40);
 
         bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footballplayerposition/uikedua.jpg"))); // NOI18N
         bgLabel.setPreferredSize(new java.awt.Dimension(960, 750));
