@@ -18,6 +18,8 @@ public class MainLayout extends javax.swing.JFrame {
     private double[] playerPositionScore;
     double[] playerStat;
     private final ResultLayout resultLayout = new ResultLayout();
+    private Model model = new Model();
+    String[] positionStr = {"Striker","Center","Defender"};
     
     private String name, nation, number, foot;
     
@@ -256,7 +258,6 @@ public class MainLayout extends javax.swing.JFrame {
         playerStat = playerStatLocal;
         
         // Get player position score
-        Model model = new Model();
         playerPositionScore = model.getPositionScore(playerStat);
         
         // Show stats and scores to ResultLayout
@@ -291,6 +292,10 @@ public class MainLayout extends javax.swing.JFrame {
         resultLayout.foot = foot;
                 
         resultLayout.playerStat = playerStat;
+        
+        double bestScore = playerPositionScore[model.getBestScore()];
+        String bestScoreStr = positionStr[model.getBestScore()];
+        System.out.println(bestScoreStr + " = " + bestScore);
     }
     
     /**

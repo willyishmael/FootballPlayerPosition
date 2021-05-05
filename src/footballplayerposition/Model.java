@@ -5,6 +5,8 @@
  */
 package footballplayerposition;
 
+import java.lang.Math;
+
 /**
  *
  * @author User
@@ -18,13 +20,28 @@ public class Model {
         {51, 37, 72, 43, 97, 68}
     };
   
-  // Array to store sum of weight from position
-  // and to store final score for return value
+  // Array to store final score for return value
   private double[] positionScore;
   
-  // Multidimentional array to store normalized weight,
-  // and sto store player score
+  // Multidimentional array to store normalized weight
   private double[][] normalizedWeight; 
+  
+  // get best score
+  public int getBestScore() {
+    double str = positionScore[0];
+    double cen = positionScore[1];
+    double def = positionScore[2];
+    
+    double bs = Math.max(Math.max(str,cen),def);
+    
+    if (bs == str) {
+        return 0;
+    } else if (bs == cen) {
+        return 1;
+    } else {
+        return 2;
+    }
+  }
     
   // Normalize weight value
   private void normalizeWeight() {
