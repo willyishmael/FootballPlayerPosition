@@ -11,45 +11,79 @@ package footballplayerposition;
  */
 public class Model {
     
-  double acceleration, shooting, passing, dribbling, defence, physics;
-  double strikerScore, centerScore, defenceScore;
-
-  public void listPlayerStat(double[] stat) {
-    acceleration = stat[0];
-    shooting = stat[1];
-    passing = stat[2];
-    dribbling = stat[3];
-    defence = stat[4];
-    physics = stat[5];
-     
+  // Multidimentional array that contains weight[position][stat]
+  private final double[][] weight = {
+        {85, 92, 42, 71, 25, 40},
+        {73, 71, 90, 64, 47, 87},
+        {51, 37, 72, 43, 97, 68}
+    };
+  
+  // Array to store sum of weight from position
+  // and to store final score for return value
+  private double[] positionScore;
+  
+  // Multidimentional array to store normalized weight,
+  // and sto store player score
+  private double[][] normalizedWeight; 
+    
+  // Normalize weight value
+  private void normalizeWeight() {
+      
+    double[] positionWeightSum = {0,0,0};
+    double[][] nw = {
+        {0,0,0,0,0,0},
+        {0,0,0,0,0,0},
+        {0,0,0,0,0,0},
+    };
+      
+    // Sum each position value
+    for (int row = 0; row < 3; row++) {
+        for (int column = 0; column < 6; column++) {
+            positionWeightSum[row] += weight[row][column];
+        }
+    }
+    
+    // Store normalized weight to a new array variable
+    for (int row = 0; row < 3; row++) {
+        for (int column = 0; column < 6; column++) {
+            nw[row][column] = weight[row][column]/positionWeightSum[row];
+        }
+    }
+    
+    normalizedWeight = nw;
   }
   
-  public void position() {
-    double[] strikerWeight = {0.23943662, 0.25915493, 0.118309859, 0.2, 0.070422535, 0.112676056};
-    double[] centerWeight = {0.168981481, 0.164351852,0.208333333, 0.148148148,0.108796296, 0.201388889};
-    double[] defenceWeight = {0.138586957, 0.100543478,	0.195652174, 0.116847826, 0.263586957, 0.184782609};
+  // Multiply weight with player stat
+  private void countScore(double[] playerStat) {
+    
+    double[] ps = {0,0,0};
+    double[][] sc = {
+        {0,0,0,0,0,0},
+        {0,0,0,0,0,0},
+        {0,0,0,0,0,0},
+    };
+      
+    // Multiply weight with player stat
+    for (int row = 0; row < 3; row++) {
+        for (int column = 0; column < 6; column++) {
+            sc[row][column] = normalizedWeight[row][column]*playerStat[column];
+        }
+    }
+    
+    // Sum every position score and store it to positionScore
+    for (int row = 0; row < 3; row++) {
+        for (int column = 0; column < 6; column++) {
+            ps[row] += sc[row][column];
+        }
+    }
+    
+    positionScore = ps;
+  }
 
-    strikerScore = ((acceleration*strikerWeight[0])+
-            (shooting*strikerWeight[1])+
-            (passing*strikerWeight[2])+
-            (dribbling*strikerWeight[3])+
-            (defence*strikerWeight[4])+
-            (physics*strikerWeight[5]));
-    
-    centerScore = ((acceleration*centerWeight[0])+
-            (shooting*centerWeight[1])+
-            (passing*centerWeight[2])+
-            (dribbling*centerWeight[3])+
-            (defence*centerWeight[4])+
-            (physics*centerWeight[5]));
-    
-    defenceScore = ((acceleration*defenceWeight[0])+
-            (shooting*defenceWeight[1])+
-            (passing*defenceWeight[2])+
-            (dribbling*defenceWeight[3])+
-            (defence*defenceWeight[4])+
-            (physics*defenceWeight[5]));
-
-    
+  // get position score and return its value
+  public double[] getPositionScore(double[] playerStat){
+      normalizeWeight();
+      countScore(playerStat);
+      return positionScore;
   }
 }
