@@ -293,9 +293,8 @@ public class MainLayout extends javax.swing.JFrame {
                 
         resultLayout.playerStat = playerStat;
         
-        double bestScore = playerPositionScore[model.getBestScore()];
-        String bestScoreStr = positionStr[model.getBestScore()];
-        System.out.println(bestScoreStr + " = " + bestScore);
+        resultLayout.bestPosition = positionStr[model.getBestScore()];
+        resultLayout.precentage = playerPositionScore[model.getBestScore()];
     }
     
     /**

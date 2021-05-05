@@ -39,6 +39,8 @@ public class ResultLayout extends javax.swing.JFrame {
         passLabel = new javax.swing.JLabel();
         shootLabel = new javax.swing.JLabel();
         accLabel = new javax.swing.JLabel();
+        PrecentageLabel = new javax.swing.JLabel();
+        BestPositionLabel = new javax.swing.JLabel();
         defenceScoreLabel = new javax.swing.JLabel();
         centerScoreLabel = new javax.swing.JLabel();
         strikerScoreLabel = new javax.swing.JLabel();
@@ -115,19 +117,33 @@ public class ResultLayout extends javax.swing.JFrame {
         getContentPane().add(accLabel);
         accLabel.setBounds(630, 290, 60, 40);
 
+        PrecentageLabel.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
+        PrecentageLabel.setText("75,00");
+        getContentPane().add(PrecentageLabel);
+        PrecentageLabel.setBounds(290, 240, 120, 40);
+
+        BestPositionLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        BestPositionLabel.setText("Defender");
+        getContentPane().add(BestPositionLabel);
+        BestPositionLabel.setBounds(130, 240, 120, 40);
+
         defenceScoreLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        defenceScoreLabel.setText("75,00");
         getContentPane().add(defenceScoreLabel);
-        defenceScoreLabel.setBounds(270, 466, 120, 40);
+        defenceScoreLabel.setBounds(260, 400, 120, 40);
 
         centerScoreLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        centerScoreLabel.setText("89,11");
         getContentPane().add(centerScoreLabel);
-        centerScoreLabel.setBounds(270, 382, 120, 40);
+        centerScoreLabel.setBounds(260, 360, 120, 40);
 
         strikerScoreLabel.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        strikerScoreLabel.setText("100");
         getContentPane().add(strikerScoreLabel);
-        strikerScoreLabel.setBounds(270, 295, 120, 40);
+        strikerScoreLabel.setBounds(260, 320, 120, 40);
 
         bgLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footballplayerposition/uikedua.jpg"))); // NOI18N
+        bgLabel.setName(""); // NOI18N
         bgLabel.setPreferredSize(new java.awt.Dimension(960, 750));
         getContentPane().add(bgLabel);
         bgLabel.setBounds(0, 0, 960, 720);
@@ -179,10 +195,12 @@ public class ResultLayout extends javax.swing.JFrame {
     }
     
     public void showResult() {
-    strikerScoreLabel.setText(Double.toString(strikerScore));
-    centerScoreLabel.setText(Double.toString(centerScore));
-    defenceScoreLabel.setText(Double.toString(defenceScore));
+    strikerScoreLabel.setText(String.format("%.2f", strikerScore)+" %");
+    centerScoreLabel.setText(String.format("%.2f", centerScore)+" %");
+    defenceScoreLabel.setText(String.format("%.2f", defenceScore)+" %");
     
+    BestPositionLabel.setText(bestPosition);
+    PrecentageLabel.setText(String.format("%.2f", precentage));
     accLabel.setText(Double.toString(playerStat[0]));
     shootLabel.setText(Double.toString(playerStat[1]));
     passLabel.setText(Double.toString(playerStat[2]));
@@ -196,6 +214,8 @@ public class ResultLayout extends javax.swing.JFrame {
     footLabel.setText(foot);
 }
 
+    public String bestPosition;
+    public double precentage;
     public double strikerScore;
     public double centerScore;
     public double defenceScore;
@@ -208,6 +228,8 @@ public class ResultLayout extends javax.swing.JFrame {
     public double[] playerStat;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BestPositionLabel;
+    private javax.swing.JLabel PrecentageLabel;
     private javax.swing.JLabel accLabel;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel bgLabel;
