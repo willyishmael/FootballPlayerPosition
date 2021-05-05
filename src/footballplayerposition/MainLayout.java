@@ -15,7 +15,11 @@ public class MainLayout extends javax.swing.JFrame {
      * Creates new form MainView
      */
     
-  
+    private double[] playerPositionScore;
+    double[] playerStat;
+    private final ResultLayout resultLayout = new ResultLayout();
+    
+    private String name, nation, number, foot;
     
     public MainLayout() {
         initComponents();
@@ -231,8 +235,10 @@ public class MainLayout extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPhyActionPerformed
 
+    @SuppressWarnings("empty-statement")
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+        // Get inputs
         double acc = Double.parseDouble(tfAcc.getText());
         double shoot = Double.parseDouble(tfShoot.getText());
         double pass = Double.parseDouble(tfPass.getText());
@@ -240,38 +246,26 @@ public class MainLayout extends javax.swing.JFrame {
         double def = Double.parseDouble(tfDef.getText());
         double phy = Double.parseDouble(tfPhy.getText());
         
-        String name = (tfName.getText());
-        String nation = (tfNation.getText());
-        String number = (tfNumber.getText());
-        String foot = (tfFoot.getText());
+        name = (tfName.getText());
+        nation = (tfNation.getText());
+        number = (tfNumber.getText());
+        foot = (tfFoot.getText());
         
-        double[] stat = {acc, shoot, pass, drib, def, phy};
+        // Store inputs to an array
+        double[] playerStatLocal = {acc, shoot, pass, drib, def, phy};
+        playerStat = playerStatLocal;
         
+        // Get player position score
         Model model = new Model();
-        model.listPlayerStat(stat);
-        model.position();
+        playerPositionScore = model.getPositionScore(playerStat);
         
-        ResultLayout resultLayout = new ResultLayout();
-        resultLayout.strikerScore = model.strikerScore;
-        resultLayout.centerScore = model.centerScore;
-        resultLayout.defenceScore = model.defenceScore;
+        // Show stats and scores to ResultLayout
+        showResult();
         
-        resultLayout.name = name;
-        resultLayout.nation = nation;
-        resultLayout.number = number;
-        resultLayout.foot = foot;
-                
-        resultLayout.playerStat = stat;
-        
-        System.out.println(model.strikerScore);
-        System.out.println(model.centerScore);
-        System.out.println(model.defenceScore);
-        
+        // Move window
         this.dispose();
         resultLayout.setVisible(true);
         resultLayout.showResult();
-        
- 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void infoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoButtonActionPerformed
@@ -286,7 +280,18 @@ public class MainLayout extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     
-
+    private void showResult() {
+        resultLayout.strikerScore = playerPositionScore[0];
+        resultLayout.centerScore = playerPositionScore[1];
+        resultLayout.defenceScore = playerPositionScore[2];
+        
+        resultLayout.name = name;
+        resultLayout.nation = nation;
+        resultLayout.number = number;
+        resultLayout.foot = foot;
+                
+        resultLayout.playerStat = playerStat;
+    }
     
     /**
      * @param args the command line arguments
