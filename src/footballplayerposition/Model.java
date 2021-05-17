@@ -5,8 +5,6 @@
  */
 package footballplayerposition;
 
-import java.lang.Math;
-
 /**
  *
  * @author User
@@ -14,17 +12,25 @@ import java.lang.Math;
 public class Model {
     
   // Multidimentional array that contains weight[position][stat]
-  private final double[][] weight = {
+  private final double[][] WEIGHT = {
         {85, 92, 42, 71, 25, 40},
         {73, 71, 90, 64, 47, 87},
         {51, 37, 72, 43, 97, 68}
     };
   
   // Array to store final score for return value
-  private double[] positionScore;
+  private double[] positionScore = new double[3];
   
-  // Multidimentional array to store normalized weight
-  private double[][] normalizedWeight; 
+  // Array to store summed position weight
+  private double[] positionWeightSum = new double[3];
+  
+  // Multidimensional array to store normalized weight
+  private double[][] normalizedWeight = new double[3][6]; 
+  
+  // Multidimensional array to store score each item of stats
+  private double[][] scoreEachStat = new double[3][6]; 
+  
+  
   
   // get best score
   public int getBestScore() {
@@ -46,55 +52,37 @@ public class Model {
   // Normalize weight value
   private void normalizeWeight() {
       
-    double[] positionWeightSum = {0,0,0};
-    double[][] nw = {
-        {0,0,0,0,0,0},
-        {0,0,0,0,0,0},
-        {0,0,0,0,0,0},
-    };
-      
     // Sum each position value
     for (int row = 0; row < 3; row++) {
         for (int column = 0; column < 6; column++) {
-            positionWeightSum[row] += weight[row][column];
+            this.positionWeightSum[row] += WEIGHT[row][column];
         }
     }
     
     // Store normalized weight to a new array variable
     for (int row = 0; row < 3; row++) {
         for (int column = 0; column < 6; column++) {
-            nw[row][column] = weight[row][column]/positionWeightSum[row];
+            this.normalizedWeight[row][column] = WEIGHT[row][column]/positionWeightSum[row];System.out.println(this.normalizedWeight[row][column]);
         }
     }
-    
-    normalizedWeight = nw;
   }
   
   // Multiply weight with player stat
   private void countScore(double[] playerStat) {
-    
-    double[] ps = {0,0,0};
-    double[][] sc = {
-        {0,0,0,0,0,0},
-        {0,0,0,0,0,0},
-        {0,0,0,0,0,0},
-    };
       
     // Multiply weight with player stat
     for (int row = 0; row < 3; row++) {
         for (int column = 0; column < 6; column++) {
-            sc[row][column] = normalizedWeight[row][column]*playerStat[column];
+            this.scoreEachStat[row][column] = normalizedWeight[row][column]*playerStat[column];
         }
     }
     
     // Sum every position score and store it to positionScore
     for (int row = 0; row < 3; row++) {
         for (int column = 0; column < 6; column++) {
-            ps[row] += sc[row][column];
+            this.positionScore[row] += this.scoreEachStat[row][column];
         }
     }
-    
-    positionScore = ps;
   }
 
   // get position score and return its value
@@ -103,4 +91,24 @@ public class Model {
       countScore(playerStat);
       return positionScore;
   }
+
+    public double[][] getWEIGHT() {
+        return WEIGHT;
+    }
+
+    public double[] getPositionScore() {
+        return positionScore;
+    }
+
+    public double[] getPositionWeightSum() {
+        return positionWeightSum;
+    }
+
+    public double[][] getNormalizedWeight() {
+        return normalizedWeight;
+    }
+
+    public double[][] getScoreEachStat() {
+        return scoreEachStat;
+    }
 }
