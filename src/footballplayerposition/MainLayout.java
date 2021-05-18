@@ -20,7 +20,7 @@ public class MainLayout extends javax.swing.JFrame {
     private double[] playerPositionScore;
     double[] playerStat = new double[6];
     private final ResultLayout resultLayout = new ResultLayout();
-    private Model model = new Model();
+    private final Model model = new Model();
     String[] positionStr = {"Striker","Center","Defender"};
     
     private String name, nation, number, foot;
@@ -275,12 +275,16 @@ public class MainLayout extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         // Get inputs
-        acc = Double.parseDouble(tfAcc.getText());
-        shoot = Double.parseDouble(tfShoot.getText());
-        pass = Double.parseDouble(tfPass.getText());
-        drib = Double.parseDouble(tfDrib.getText());
-        def = Double.parseDouble(tfDef.getText());
-        phy = Double.parseDouble(tfPhy.getText());
+        try {
+            acc = Double.parseDouble(tfAcc.getText());
+            shoot = Double.parseDouble(tfShoot.getText());
+            pass = Double.parseDouble(tfPass.getText());
+            drib = Double.parseDouble(tfDrib.getText());
+            def = Double.parseDouble(tfDef.getText());
+            phy = Double.parseDouble(tfPhy.getText());
+        } catch (NumberFormatException ex) {
+            
+        }
         
         name = (tfName.getText());
         nation = (tfNation.getText());
@@ -291,7 +295,7 @@ public class MainLayout extends javax.swing.JFrame {
         double[] playerStatLocal = {acc, shoot, pass, drib, def, phy};
         this.playerStat = playerStatLocal;
        
-        if (isInputValid(this.playerStat)) {
+        if (isInputValid(this.playerStat) && isInputNotZero(this.playerStat)) {
             // Get player position score
             this.playerPositionScore = model.getPositionScore(playerStat);
 
@@ -303,7 +307,7 @@ public class MainLayout extends javax.swing.JFrame {
             resultLayout.setVisible(true);
             resultLayout.showResult();
         } else {
-            JOptionPane.showMessageDialog(this, "Must be in between 0 and 99");
+            JOptionPane.showMessageDialog(this, "Must in between 0 and 99, and cannot be empty ");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -378,6 +382,15 @@ public class MainLayout extends javax.swing.JFrame {
             if (isValid == false) {break;}
         }
         return isValid;
+    }
+    
+    private Boolean isInputNotZero(double[] playerStat) {
+        boolean isNotZero = false;
+        for (int i = 0; i < 6; i++) {
+            isNotZero = playerStat[i] != 0;
+            if (isNotZero == false) {break;}
+        }
+        return isNotZero;
     }
     
     /**
