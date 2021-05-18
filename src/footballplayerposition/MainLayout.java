@@ -5,6 +5,8 @@
  */
 package footballplayerposition;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -16,12 +18,14 @@ public class MainLayout extends javax.swing.JFrame {
      */
     
     private double[] playerPositionScore;
-    double[] playerStat;
+    double[] playerStat = new double[6];
     private final ResultLayout resultLayout = new ResultLayout();
     private Model model = new Model();
     String[] positionStr = {"Striker","Center","Defender"};
     
     private String name, nation, number, foot;
+    
+    private double acc, shoot, pass, drib, def, phy;
     
     public MainLayout() {
         initComponents();
@@ -88,6 +92,11 @@ public class MainLayout extends javax.swing.JFrame {
                 tfPhyActionPerformed(evt);
             }
         });
+        tfPhy.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfPhyKeyPressed(evt);
+            }
+        });
         getContentPane().add(tfPhy);
         tfPhy.setBounds(560, 600, 50, 30);
 
@@ -95,6 +104,11 @@ public class MainLayout extends javax.swing.JFrame {
         tfDef.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDefActionPerformed(evt);
+            }
+        });
+        tfDef.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfDefKeyPressed(evt);
             }
         });
         getContentPane().add(tfDef);
@@ -106,6 +120,11 @@ public class MainLayout extends javax.swing.JFrame {
                 tfDribActionPerformed(evt);
             }
         });
+        tfDrib.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfDribKeyPressed(evt);
+            }
+        });
         getContentPane().add(tfDrib);
         tfDrib.setBounds(560, 500, 50, 30);
 
@@ -113,6 +132,11 @@ public class MainLayout extends javax.swing.JFrame {
         tfPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPassActionPerformed(evt);
+            }
+        });
+        tfPass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfPassKeyPressed(evt);
             }
         });
         getContentPane().add(tfPass);
@@ -124,6 +148,11 @@ public class MainLayout extends javax.swing.JFrame {
                 tfShootActionPerformed(evt);
             }
         });
+        tfShoot.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfShootKeyPressed(evt);
+            }
+        });
         getContentPane().add(tfShoot);
         tfShoot.setBounds(300, 550, 50, 30);
 
@@ -131,6 +160,11 @@ public class MainLayout extends javax.swing.JFrame {
         tfAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAccActionPerformed(evt);
+            }
+        });
+        tfAcc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfAccKeyPressed(evt);
             }
         });
         getContentPane().add(tfAcc);
@@ -198,7 +232,7 @@ public class MainLayout extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfNameActionPerformed
 
     private void tfNationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNationActionPerformed
@@ -214,7 +248,7 @@ public class MainLayout extends javax.swing.JFrame {
     }//GEN-LAST:event_tfFootActionPerformed
 
     private void tfAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAccActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfAccActionPerformed
 
     private void tfShootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfShootActionPerformed
@@ -241,12 +275,12 @@ public class MainLayout extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         // Get inputs
-        double acc = Double.parseDouble(tfAcc.getText());
-        double shoot = Double.parseDouble(tfShoot.getText());
-        double pass = Double.parseDouble(tfPass.getText());
-        double drib = Double.parseDouble(tfDrib.getText());
-        double def = Double.parseDouble(tfDef.getText());
-        double phy = Double.parseDouble(tfPhy.getText());
+        acc = Double.parseDouble(tfAcc.getText());
+        shoot = Double.parseDouble(tfShoot.getText());
+        pass = Double.parseDouble(tfPass.getText());
+        drib = Double.parseDouble(tfDrib.getText());
+        def = Double.parseDouble(tfDef.getText());
+        phy = Double.parseDouble(tfPhy.getText());
         
         name = (tfName.getText());
         nation = (tfNation.getText());
@@ -255,18 +289,22 @@ public class MainLayout extends javax.swing.JFrame {
         
         // Store inputs to an array
         double[] playerStatLocal = {acc, shoot, pass, drib, def, phy};
-        playerStat = playerStatLocal;
-        
-        // Get player position score
-        playerPositionScore = model.getPositionScore(playerStat);
-        
-        // Show stats and scores to ResultLayout
-        showResult();
-        
-        // Move window
-        this.dispose();
-        resultLayout.setVisible(true);
-        resultLayout.showResult();
+        this.playerStat = playerStatLocal;
+       
+        if (isInputValid(this.playerStat)) {
+            // Get player position score
+            this.playerPositionScore = model.getPositionScore(playerStat);
+
+            // Show stats and scores to ResultLayout
+            showResult();
+
+            // Move window
+            this.dispose();
+            resultLayout.setVisible(true);
+            resultLayout.showResult();
+        } else {
+            JOptionPane.showMessageDialog(this, "Must be in between 0 and 99");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void infoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoButtonActionPerformed
@@ -279,6 +317,30 @@ public class MainLayout extends javax.swing.JFrame {
         this.dispose();
         infoLayout.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tfAccKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAccKeyPressed
+        isInputNumber(tfAcc, evt);
+    }//GEN-LAST:event_tfAccKeyPressed
+
+    private void tfShootKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfShootKeyPressed
+        isInputNumber(tfShoot, evt);
+    }//GEN-LAST:event_tfShootKeyPressed
+
+    private void tfPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPassKeyPressed
+        isInputNumber(tfPass, evt);
+    }//GEN-LAST:event_tfPassKeyPressed
+
+    private void tfDribKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDribKeyPressed
+        isInputNumber(tfDrib, evt);
+    }//GEN-LAST:event_tfDribKeyPressed
+
+    private void tfDefKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDefKeyPressed
+        isInputNumber(tfDef, evt);
+    }//GEN-LAST:event_tfDefKeyPressed
+
+    private void tfPhyKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPhyKeyPressed
+        isInputNumber(tfPhy, evt);
+    }//GEN-LAST:event_tfPhyKeyPressed
 
     
     private void showResult() {
@@ -295,6 +357,27 @@ public class MainLayout extends javax.swing.JFrame {
         
         resultLayout.bestPosition = positionStr[model.getBestScore()];
         resultLayout.precentage = playerPositionScore[model.getBestScore()];
+    }
+    
+    // check if inputs is Number or not
+    private void isInputNumber(javax.swing.JTextField tf, java.awt.event.KeyEvent evt) {
+        
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            tf.setEditable(false);
+        } else {
+            tf.setEditable(true);
+        }
+    }
+    
+    // The stat inputs must be between 0 and 99
+    private Boolean isInputValid(double[] playerStat) {
+        boolean isValid = false;
+        for (int i = 0; i < 6; i++) {
+            isValid = playerStat[i] < 100 && playerStat[i] > 0;
+            if (isValid == false) {break;}
+        }
+        return isValid;
     }
     
     /**

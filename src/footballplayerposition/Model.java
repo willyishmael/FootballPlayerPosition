@@ -62,7 +62,7 @@ public class Model {
     // Store normalized weight to a new array variable
     for (int row = 0; row < 3; row++) {
         for (int column = 0; column < 6; column++) {
-            this.normalizedWeight[row][column] = WEIGHT[row][column]/positionWeightSum[row];System.out.println(this.normalizedWeight[row][column]);
+            this.normalizedWeight[row][column] = WEIGHT[row][column]/positionWeightSum[row];
         }
     }
   }
